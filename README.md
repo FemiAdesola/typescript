@@ -1,4 +1,4 @@
-# TypeScript Assignment
+# TypeScript Assignment 
 
 - Complete two challenges: banking application & fetching e-commerce data.
 - Check the scripts in `package.json` to run the suitable command for each challenge
