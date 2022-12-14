@@ -48,10 +48,10 @@ export class Branch{
        return null
     }
 
-   generateError(message: string, code: number): never
+   generateError(message: string, code: number): never{
         {
             throw { message: message, errorCode: code };
         }
-    
+    }
     
 }

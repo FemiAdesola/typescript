@@ -1,14 +1,14 @@
-import { List } from "./types/ecommerce";
+// import { List } from "./types/ecommerce";
 
 /* Fix all the possible bugs you might find in the codes below */
 
-const users = new List()
-const products = new List()
+// const users = new List()
+// const products = new List()
 
-users.fetchAll("https://api.escuelajs.co/api/v1/users")
-products.fetchAll("https://api.escuelajs.co/api/v1/products")
+// users.fetchAll("https://api.escuelajs.co/api/v1/users")
+// products.fetchAll("https://api.escuelajs.co/api/v1/products")
 
-console.log(users.sortList("desc")) //Expect to see users array in new order of id decreasing
+// console.log(users.sortList("desc")) //Expect to see users array in new order of id decreasing
 
 // /** find user by email.
 //  * Take a parameter of type string.

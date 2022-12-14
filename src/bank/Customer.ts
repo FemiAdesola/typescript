@@ -18,7 +18,7 @@ export class Customer{
         let balance = 0;
         this.transaction.forEach(t => balance += t.amount);
         if (balance < 0) { balance = 0; }
-        console.log(balance);
+        console.log(`Your balance is ${balance}`);
         return balance;
     }
     addTransaction(amount: number): boolean {
