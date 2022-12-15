@@ -3,11 +3,11 @@
 - Complete two challenges: banking application & fetching e-commerce data.
 - Check the scripts in `package.json` to run the suitable command for each challenge
 
-## Create a simple banking application
+## Create a simple banking application <ins>**check solution [here](/src/bank.ts)**<ins>
 
 Implement the following classes, interface, and codes (you can decide which file to put each type, but do not write all the types in `index.ts` or `bank.ts`). All the properties must be kept private, while you can make the methods as public
 
-1. Class Bank
+1. Class Bank <ins>**check solution [here](/src/bank/Bank.ts)**<ins>
 
     - It has two properties: `name` (string), `branches` (array of type Branch[])
 
@@ -27,7 +27,7 @@ Implement the following classes, interface, and codes (you can decide which file
 
     - `listCustomers()`, has two parameters, branch and boolean and returns a boolean. Return true if the branch exists or false otherwise. This method prints out a list of customers with transaction details if second parameter is true.
 
-2. Class Branch
+2. Class Branch <ins>**check solution [here](/src/bank/Branch.ts)**<ins>
 
     - It has two properties, a string called `name` and an array called `customers`. Array `customers` should hold objects of type Customer.
 
@@ -45,7 +45,7 @@ Implement the following classes, interface, and codes (you can decide which file
 
         - `findCustomer()`, has one parameter of type string (`id` of customer) and returns a customer. Return the customer if they exist, null otherwise.
 
-3. Class Customer
+3. Class Customer <ins>**check solution [here](/src/bank/Customer.ts)**<ins>
 
     - It has 3 properties, string `name`, string `id`, and an array that holds objects of type Transaction called `transactions`.
 
@@ -63,7 +63,7 @@ Implement the following classes, interface, and codes (you can decide which file
 
         - `addTransaction()`, has one parameter of type number and return true if transaction is added sucessfully. You need to make sure that balance cannot be negative. This function should add the successful transaction into transactions array.
 
-4. Interface Transaction
+4. Interface Transaction <ins>**check solution [here](/src/bank/Transaction.ts)**<ins>
 
     - It has 2 properties, a number `amount`, and a Date called `date`. `date` refers to the time that transaction has been created.
 
@@ -99,7 +99,7 @@ console.log(arizonaBank.listCustomers(westBranch, true))
 console.log(arizonaBank.listCustomers(sunBranch,true))
 ```
 
-## Fetch E-commerce data
+## Fetch E-commerce data <ins>**check solution [here](/src/types/ecommerce.ts)**<ins>
 
 Explore the codes in `index.ts` and folder `types`. Complete the codes or fix bugs
-if needed to producce the expected result according to the codes in `index.ts`.
+if needed to producce the expected result according to the codes in `index.ts`. <ins>**check solution [here](/src/index.ts)**<ins>
