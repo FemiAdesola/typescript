@@ -42,13 +42,18 @@ class Bank {
         return false;
     }
     findBranchByName(branchesList) {
-        for (let i = 0; i < this.branches.length; i++) {
-            if (this.branches[i].getName() === branchesList) {
-                return true;
-            }
-            else {
-                console.log(`This branch ${branchesList} not found`);
-            }
+        const filterBranch = this.branches.filter(branch => {
+            return branch.getName().toLowerCase().match(branchesList);
+        });
+        if (filterBranch.length > 0) {
+            let branchName = filterBranch.map(branch => {
+                return branch.getName();
+            });
+            console.log(`This branch '${branchesList}' : '${branchName.join(',')}' is existing `);
+            return true;
+        }
+        else {
+            console.log(`This branch '${branchesList}' is not in the list of branches`);
         }
         return false;
     }
@@ -61,11 +66,11 @@ class Bank {
         }
         return false;
     }
-    listCustomers(branch, printList = false) {
-        this.branches.find(existingBranch => {
-            if (existingBranch.getName() === branch.getName()) {
-                if (printList) {
-                    let customers = existingBranch.getCustomers();
+    listCustomers(branch, listOfCustomer = false) {
+        this.branches.find(existedBranch => {
+            if (existedBranch.getName() === branch.getName()) {
+                if (listOfCustomer) {
+                    let customers = existedBranch.getCustomers();
                     customers.map(customer => {
                         if (customer.getTransaction().length > 0) {
                             console.log(`Customer ${customer.getName()}(id: ${customer.getId()}) transactions: `);
@@ -74,7 +79,7 @@ class Bank {
                             });
                         }
                         else {
-                            console.log(`Customer ${customer.getName()}(id: ${customer.getId()}): 'No transactions' `);
+                            console.log(`Customer ${customer.getName()}(id: ${customer.getId()}): 'No transactions was made' `);
                         }
                     });
                 }

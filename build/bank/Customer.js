@@ -17,7 +17,7 @@ class Customer {
         if (balance < 0) {
             balance = 0;
         }
-        console.log(balance);
+        console.log(`Your balance is ${balance}`);
         return balance;
     }
     addTransaction(amount) {

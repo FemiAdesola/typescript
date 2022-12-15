@@ -7,5 +7,5 @@ export interface User extends Entity{
     password: string;
     role: "customer"| "admin";
     avatar: string;
-    id: number;
+    // id: number;
 }

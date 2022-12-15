@@ -33,8 +33,29 @@ export class List<T extends Entity> extends Array<T> {
     id does not exist. Only add all the items to the array if every item satisfies the condition.
     Return 1 if can push all new items to the array, otherwise return 0 */
     // push(...items: T[]): number {
-        
+    //     items.map(item => {
+    //         if (this.find(original => original.id === item.id)) {
+    //             throw Error("id is duplicated")
+    //         }
+    //     })
+    //     this.push(...items)
+    //     return 1
     // }
+
+    push(...items: T[]): number {
+        function isItemExit(array:T[], id:number) {
+            return array.some(arrVal => id === arrVal.id);
+        }
+        
+        if (items.map(newItem => isItemExit(this, newItem.id)).includes(true)) {
+            return 0;
+        } else {
+            for (let i = 0; i < items.length; i++) {
+                this[this.length] = items[i];
+            }
+            return 1;
+        }
+    }
 
 }
 
