@@ -33,16 +33,16 @@ const main = async () => {
      * Return an array
      */
     const findProductsByText = (search: string) => {
-        console.log(products)
+        // console.log(products)
         // I used different method, but nothing works
 
         // return products.filter(product => product.title === search) // return undefined
       
-        for (let product of products) {
-            if (products.find(product => product.title === search)) {
-                return [product]
-            }
-        } // it return all value of products
+        // for (let product of products) {
+        //     if (products.find(product => product.title === search)) {
+        //         return [product]
+        //     }
+        // } // it return all value of products
 
         // if (search) {
         //     let filterValue = RegExp(search, 'g');
@@ -50,6 +50,13 @@ const main = async () => {
         
         // }
         //     return products; // point to filter error
+        if (typeof search === 'string') {
+            return products.filter(product => product.title?.toLowerCase().includes(search));
+        } else {
+            
+            return products;
+        }
+    
     }
     
     const foundProducts = findProductsByText("shirt")
