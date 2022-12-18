@@ -27,10 +27,11 @@ const main = async () => {
      * Return an array
      */
     const findProductsByText = (search) => {
+        console.log(products);
         // I used different method, but nothing works
-        // return products.filter(products => products.title === search) // return undefined
+        // return products.filter(product => product.title === search) // return undefined
         for (let product of products) {
-            if (products.filter(product => product.title === search)) {
+            if (products.find(product => product.title === search)) {
                 return [product];
             }
         } // it return all value of products

@@ -13,6 +13,5 @@ export interface Product extends Entity {
         image: string;
     };
     available: boolean;
-    id: number;
 }
 
