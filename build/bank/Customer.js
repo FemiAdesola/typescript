@@ -20,13 +20,13 @@ class Customer {
         console.log(`Your balance is ${balance}`);
         return balance;
     }
-    addTransaction(amount) {
-        this.transaction.push({ amount, date: new Date() });
-        if (amount > 0) {
-            console.log(`Transaction of ${amount} was added to ${this.name}'s account with id ${this.id}`);
+    addTransaction(balance) {
+        this.transaction.push({ amount: balance, date: new Date() });
+        if (balance > 0) {
+            console.log(`Transaction of ${balance} was added to ${this.name}'s account with id ${this.id}`);
         }
-        else if (amount < 0) {
-            console.log(`Transaction of ${amount} was removed from ${this.name}'s account with id ${this.id}`);
+        else if (balance < 0) {
+            console.log(`Transaction of ${balance} was removed from ${this.name}'s account with id ${this.id}`);
         }
         {
             return true;

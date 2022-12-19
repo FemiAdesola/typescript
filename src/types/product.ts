@@ -6,12 +6,12 @@ export interface Product extends Entity {
     price: number;
     description: string;
     image: string[];
-    category: {
-        id: number;
-        name: string;
-        keyLoremSpace: string;
-        image: string;
-    };
     available: boolean;
 }
 
+export interface Category{
+    id: number;
+    name: string;
+    keyLoremSpace?: string;
+    image: string
+}

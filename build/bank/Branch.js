@@ -36,9 +36,6 @@ class Branch {
         return false;
     }
     findCustomer(id) {
-        if (!id) {
-            throw new Error('id not found');
-        }
         for (let customer of this.customers) {
             if (customer.getId() === id) {
                 return customer;

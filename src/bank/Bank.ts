@@ -8,13 +8,15 @@ export class Bank {
     }
 
     addBranch(branch: Branch): boolean { 
-        if (this.checkBranch(branch))  {
-            console.log(`This branch ${branch.getName()} is in the list of branches`)          
-        }
+        if (this.checkBranch(branch)) {
+            console.log(`This branch ${branch.getName()} is in the list of branches`)
+            return false;
+        } else {
 
-        this.branches.push(branch);
-        console.log(`This branch ${branch.getName()} has been added successfully`)
-        return true;
+            this.branches.push(branch);
+            console.log(`This branch ${branch.getName()} has been added successfully`)
+            return true;
+        }
     }
 
     addCustomer(branch: Branch, customer:Customer): boolean { 
@@ -44,26 +46,24 @@ export class Bank {
         return false;
     }
 
-    findBranchByName(branchesList: string): boolean{
+    findBranchByName(branchName: string){
         const filterBranch = this.branches.filter(branch => {
-            return branch.getName().toLowerCase().match(branchesList)
+            return branch.getName().toLowerCase().match(branchName)
         })
         if(filterBranch.length > 0) {
             let branchName = filterBranch.map(branch => {
                 return branch.getName()
             })
-            console.log(`This branch '${branchesList}' : '${branchName.join(',')}' is existing `);
-            return true
+            console.log(`This branch '${branchName}' : '${branchName.join(',')}' is existing `);
         } else {
-            console.log(`This branch '${branchesList}' is not in the list of branches`)
+            console.log(`This branch '${branchName}' is not in the list of branches`)
         }
-        return false
     }
 
     checkBranch(branch:Branch):boolean {
         if(branch) {
-            let bank = this.branches.find(existingBank => {
-                return existingBank.getName() === branch.getName()
+            let bank = this.branches.find(existingBranch => {
+                return existingBranch.getName() === branch.getName()
             })
             return Boolean(bank)
         }
